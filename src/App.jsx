@@ -11,6 +11,12 @@ const App = () => (
         <h1>h1</h1>
         <span>Heading span</span>
       </div>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 1</a>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
+      <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
     </div>
   </section>
 );
