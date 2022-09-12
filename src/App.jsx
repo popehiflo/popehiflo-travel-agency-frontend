@@ -17,6 +17,9 @@ const App = () => (
       <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
       <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
       <a href="https://reactjs.org" className="btn-primary">Boton primario 2</a>
+      <a href="https://reactjs.org" className="btn-icon-primary">A</a>
+      <a href="https://reactjs.org" className="btn-icon-primary">B</a>
+      <a href="https://reactjs.org" className="btn-icon-primary">C</a>
     </div>
   </section>
 );

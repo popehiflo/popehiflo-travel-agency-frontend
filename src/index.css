@@ -73,6 +73,19 @@ section {
   width: max-content;
 }
 
+.btn-icon-primary {
+  height: 4.5rem;
+  width: 4.5rem;
+  font-size: 2rem;
+  color: var(--color-text-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+  border: var(--border-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* media queries */
 @media (max-width: 1200px) {
