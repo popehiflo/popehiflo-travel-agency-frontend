@@ -1,23 +1,18 @@
 import logo from './logo.svg';
-import './App.css';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
+  <section className="App">
+    <div className="app">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
         Edit.
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+      <div className="heading">
+        <h1>h1</h1>
+        <span>Heading span</span>
+      </div>
+    </div>
+  </section>
 );
 
 export default App;
