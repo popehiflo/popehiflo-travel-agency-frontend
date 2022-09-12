@@ -1,8 +1,10 @@
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
-// import logo from './logo.svg';
 
 const App = () => (
-  <Header />
+  <BrowserRouter>
+    <Header />
+  </BrowserRouter>
 );
 
 export default App;
