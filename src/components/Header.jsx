@@ -29,7 +29,6 @@ const HeaderWrapper = styledComponents.header`
 const Logo = styledComponents.img`
   display: flex;
   min-height: 5rem;
-  background-color: #FFF;
 `;
 
 const NavWrapper = styledComponents.div`
