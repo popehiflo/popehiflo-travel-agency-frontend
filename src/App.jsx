@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 const App = () => (
@@ -1612,6 +1613,7 @@ const App = () => (
       cumque rem dicta dolores quas tempora ipsam officiis, cum, molestiae
       corrupti odio vitae culpa doloribus.
     </section>
+    <Footer />
   </BrowserRouter>
 );
 
