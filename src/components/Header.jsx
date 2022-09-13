@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import styledComponents from 'styled-components';
-import logo from '../assets/imgs/logo-popehiflo-travel.png';
+import logo from '../assets/imgs/logo-popehiflo-travel.svg';
 
 const HeaderWrapper = styledComponents.header`
   background: ${({ bg }) => (bg ? 'var(--color-bg-light)' : 'transparent')};
@@ -29,7 +29,6 @@ const HeaderWrapper = styledComponents.header`
 const Logo = styledComponents.img`
   display: flex;
   min-height: 5rem;
-  background-color: #FFF;
 `;
 
 const NavWrapper = styledComponents.div`
