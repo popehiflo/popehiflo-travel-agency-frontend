@@ -1,12 +1,12 @@
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import styledComponents from 'styled-components';
 import logo from '../assets/imgs/logo-popehiflo-travel.png';
 
 const HeaderWrapper = styledComponents.header`
-  background: red;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,7 @@ const HeaderWrapper = styledComponents.header`
   justify-content: space-between;
   padding: 1rem 9%;
   z-index: 100;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   @media (max-width: 1200px) {
     padding: 1rem 2rem;
   }
@@ -47,6 +48,34 @@ const Navbar = styledComponents.nav`
       color: var(--color-primary);
     }
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    border-radius: 0.5rem;
+    width: 30rem;
+    background-color: var(--color-bg-white);
+    border: var(--border-primary);
+    box-shadow: var(--primary-box-shadow);
+
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: 0.3s ease-in-out;
+    a {
+      font-size: 2rem;
+      text-align: center;
+      display: block;
+      margin: 2rem;
+    }
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+      transition: 0.3s ease-out;
+    }
+  }
 `;
 
 const BtnIcon = {
@@ -58,25 +87,44 @@ const BtnIcon = {
   background: 'none',
 };
 
-const Header = () => (
-  <HeaderWrapper>
-    <NavLink to="/">
-      <Logo src={logo} alt="logo popehiflo travel" />
-    </NavLink>
-    <NavWrapper>
-      <Navbar>
-        <NavHashLink to="/#home">Home</NavHashLink>
-        <NavHashLink to="/#home">About</NavHashLink>
-        <NavHashLink to="/#home">Tours</NavHashLink>
-        <NavHashLink to="/#home">SinUso</NavHashLink>
-        <NavLink to="">Login</NavLink>
-      </Navbar>
-      <NavLink to="" className="btn-primary">Sign In</NavLink>
-      <NavLink to="" style={BtnIcon} type="button" aria-label="Open Shopping Cart">
-        <FontAwesomeIcon icon={faShoppingCart} />
+const BtnMenu = styledComponents.button`
+  display: none;
+  @media (max-width: 768px) {
+    display: initial;
+  }
+`;
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navMenu = useRef(null);
+  const handleClickBtnMenu = () => {
+    navMenu.current.classList.toggle('active');
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <HeaderWrapper>
+      <NavLink to="/">
+        <Logo src={logo} alt="logo popehiflo travel" />
       </NavLink>
-    </NavWrapper>
-  </HeaderWrapper>
-);
+      <NavWrapper>
+        <Navbar ref={navMenu}>
+          <NavHashLink to="/#home">Home</NavHashLink>
+          <NavHashLink to="/#home">About</NavHashLink>
+          <NavHashLink to="/#home">Tours</NavHashLink>
+          <NavHashLink to="/#home">SinUso</NavHashLink>
+          <NavLink to="">Login</NavLink>
+        </Navbar>
+        <NavLink to="" className="btn-primary">Sign In</NavLink>
+        <NavLink to="" style={BtnIcon} type="button" aria-label="Open Shopping Cart">
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </NavLink>
+        <BtnMenu style={BtnIcon} type="button" onClick={handleClickBtnMenu} id="menu-btn" aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+        </BtnMenu>
+      </NavWrapper>
+    </HeaderWrapper>
+  );
+};
 
 export default Header;
