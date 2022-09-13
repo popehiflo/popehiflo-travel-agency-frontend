@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import styledComponents from 'styled-components';
 // Import Swiper styles
 import 'swiper/css';
@@ -8,6 +9,8 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
+
+import { getToursByBanner } from '../MOCKDATA';
 
 const BannerWrapper = styledComponents.section`
   padding: 0;
@@ -49,11 +52,9 @@ const SlideContent = styledComponents.div`
 `;
 
 const Banner = () => {
-  const bgImg01 = 'https://swiperjs.com/demos/images/nature-1.jpg';
-  const bgImg02 = 'https://swiperjs.com/demos/images/nature-2.jpg';
-  const bgImg03 = 'https://swiperjs.com/demos/images/nature-3.jpg';
+  const tours = getToursByBanner();
   return (
-    <BannerWrapper>
+    <BannerWrapper id="banner">
       <MySwiper
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         effect="fade"
@@ -64,27 +65,16 @@ const Banner = () => {
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <SlideImg src={bgImg01} />
-          <SlideContent>
-            <span>Let us explore the beauty of</span>
-            <h3>Machu Picchu 01</h3>
-          </SlideContent>
-        </SwiperSlide>
-        <SwiperSlide>
-          <SlideImg src={bgImg02} />
-          <SlideContent>
-            <span>Let us explore the beauty of</span>
-            <h3>22 - Machu Picchu 022</h3>
-          </SlideContent>
-        </SwiperSlide>
-        <SwiperSlide>
-          <SlideImg src={bgImg03} />
-          <SlideContent>
-            <span>Let us explore the beauty of</span>
-            <h3>33 - Machu Picchu 033</h3>
-          </SlideContent>
-        </SwiperSlide>
+        {tours.map((tour) => (
+          <SwiperSlide key={tour.id}>
+            <SlideImg src={tour.img} alt="tour popehiflo travel" />
+            <SlideContent>
+              <span>Let us explore the beauty of</span>
+              <h3>{tour.title}</h3>
+              <Link to="/" className="btn-primary">Discover</Link>
+            </SlideContent>
+          </SwiperSlide>
+        ))}
       </MySwiper>
     </BannerWrapper>
   );

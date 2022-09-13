@@ -8,7 +8,7 @@ const dataTours = [
   {
     id: uuidv4(),
     img: `${img1}`,
-    tittle: 'Cusco, Capital Arqueologica de America',
+    title: 'Cusco, Capital Arqueologica de America',
     slug: 'cusco-capital-arqueologica-de-america',
     duration: {
       days: 9,
@@ -27,7 +27,7 @@ const dataTours = [
   },
   {
     id: uuidv4(),
-    img: 'https://i.ibb.co/L52MdQ3/psycoterapy-img.png',
+    img: `${img3}`,
     title: 'Psicoterapia de otro doctor',
     slug: 'psicoterapia-de-otro-doctor',
     duration: {
