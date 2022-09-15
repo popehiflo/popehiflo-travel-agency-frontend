@@ -67,7 +67,7 @@ const Banner = () => {
       >
         {tours.map((tour) => (
           <SwiperSlide key={tour.id}>
-            <SlideImg src={tour.img} alt="tour popehiflo travel" />
+            <SlideImg src={tour.imgs[0]} alt="tour popehiflo travel" />
             <SlideContent>
               <span>Let us explore the beauty of</span>
               <h3>{tour.title}</h3>
