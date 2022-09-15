@@ -5,11 +5,13 @@ import Header from './components/Header';
 import ToursGrid from './components/ToursGrid';
 import TourCategories from './components/TourCategories';
 import { getAllTours } from './MOCKDATA';
+import Home from './pages/Home';
 
 const App = () => {
   const tours = getAllTours();
   return (
     <BrowserRouter>
+      <Home />
       <Header />
       <Banner />
       <TourCategories />
