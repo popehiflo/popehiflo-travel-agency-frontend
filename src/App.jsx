@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ToursGrid from './components/ToursGrid';
+import TourCategories from './components/TourCategories';
 import { getAllTours } from './MOCKDATA';
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Banner />
-
+      <TourCategories />
       <ToursGrid tours={tours} />
       <Footer />
     </BrowserRouter>
