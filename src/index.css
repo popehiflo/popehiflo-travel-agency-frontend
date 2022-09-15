@@ -12,6 +12,7 @@
   --color-green: #14DB8A;
   --border-radius: 1rem;
   --border-primary: 0.2rem solid var(--color-primary);
+  --border-primary-white: 0.2rem solid var(--color-text-white);
   --border-radius-btn-primary: 2.3rem;
   --border-secondary: 0.2rem solid var(--color-secondary);
   --primary-box-shadow: 0.5rem 0.5rem 0 rgba(25, 119, 204 , 0.2);

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styledComponents from 'styled-components';
+import TourCard from './TourCard';
 
 const GridWrapper = styledComponents.div`
   display: grid;
@@ -13,7 +14,7 @@ const ToursGrid = (props) => {
   return (
     <GridWrapper>
       {tours.map((tour) => (
-        <pre>{JSON.stringify(tour, null, 2)}</pre>
+        <TourCard key={tour.id} tour={tour} />
       ))}
     </GridWrapper>
   );
