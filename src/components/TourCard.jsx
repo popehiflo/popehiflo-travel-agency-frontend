@@ -49,7 +49,7 @@ const CardInfoContent = styledComponents.div`
 `;
 
 const ContentTags = styledComponents.div`
-
+  margin-top: 0.5rem;
 `;
 const Tag = styledComponents.span`
   display: inline-block;
@@ -91,7 +91,7 @@ const TourCard = ({ tour }) => (
       </CardInfoImage>
       <CardInfoContent>
         <h3>{tour.title}</h3>
-        <p>{tour.information.slice(0, 100)}</p>
+        <p>{`${tour.information.slice(0, 100)}...`}</p>
         <ContentTags>
           <Tag>
             <FontAwesomeIcon icon={faSun} />
