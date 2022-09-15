@@ -1,7 +1,12 @@
 import React from 'react';
+import Banner from '../components/Banner';
+import TourCategories from '../components/TourCategories';
 
 const Home = () => (
-  <div>Home</div>
+  <>
+    <Banner />
+    <TourCategories />
+  </>
 );
 
 export default Home;
