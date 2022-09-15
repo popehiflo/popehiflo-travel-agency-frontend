@@ -54,7 +54,7 @@ const SlideContent = styledComponents.div`
 const Banner = () => {
   const tours = getToursByBanner();
   return (
-    <BannerWrapper id="banner">
+    <BannerWrapper id="home">
       <MySwiper
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         effect="fade"
