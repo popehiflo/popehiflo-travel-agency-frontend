@@ -120,10 +120,10 @@ const Header = () => {
       <NavWrapper>
         <Navbar ref={navMenu}>
           <NavHashLink to="/#home">Home</NavHashLink>
-          <NavHashLink to="/#home">About</NavHashLink>
-          <NavHashLink to="/#home">Tours</NavHashLink>
-          <NavHashLink to="/#home">SinUso</NavHashLink>
-          <NavLink to="">Login</NavLink>
+          <NavHashLink to="/#about">About</NavHashLink>
+          <NavHashLink to="/#popular">Popular</NavHashLink>
+          <NavHashLink to="/tours">#Tours</NavHashLink>
+          <NavLink to="/tours">Tours</NavLink>
         </Navbar>
         <NavLink to="" className="btn-primary">Sign In</NavLink>
         <NavLink to="" style={BtnIcon} type="button" aria-label="Open Shopping Cart">
